@@ -18,6 +18,7 @@ public class SampleClientController {
 	
 	@GetMapping(value = "/clientdata")
 	public String clientData() {
+		log.info("Request received in sample client");
 		return restTemplate.getForObject("https://localhost:9080/sampleserver/serverdata", String.class);
 		
 	}
