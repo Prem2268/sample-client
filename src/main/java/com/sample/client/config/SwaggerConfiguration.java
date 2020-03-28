@@ -1,5 +1,6 @@
 package com.sample.client.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -14,20 +15,20 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 public class SwaggerConfiguration {
 	
+	@Bean
 	public Docket apiInfo() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors
-						.basePackage("com.sample.client.controller"))
-				.paths(PathSelectors.regex("/.*"))
+				.apis(RequestHandlerSelectors.basePackage("com.sample.client.controller"))
+				.paths(PathSelectors.any())
 				.build().apiInfo(getApinInfo());
 	}
 	
 	private ApiInfo getApinInfo() {
 		return new ApiInfoBuilder().title("Two way SSL authentication gateway")
 	            .description("Two way SSL authentication gateway")
-	            .license("Apache 2.0")
-	            .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
 	            .version("1.0.0")
+	            .license(null)
+	            .licenseUrl(null)
 	            .build();
 
 	}
