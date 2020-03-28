@@ -1,0 +1,10 @@
+server:
+  port: 9081
+  ssl:
+    enabled: true
+    client-auth: need
+    key-store: '@project.basedir@/secrets/sample-client.pfx'
+    key-store-password: sample-client
+    key-store-type: PKCS12
+    trust-store: '@project.basedir@/secrets/sample-client-trust.ks'
+    trust-store-password: sample-client
