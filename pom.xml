@@ -18,7 +18,7 @@
 	<description>Two Way SSL Sample Gateway</description>
 	
 	<properties>
-		<http-client.version>4.5.12</http-client.version>
+		<http-client.version>4.5.13</http-client.version>
 	</properties>
 
 	<dependencies>
